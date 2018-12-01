@@ -9,8 +9,7 @@ public class InsuranceApp {
     public static void main(String[] args) throws FileNotFoundException {
 
         // Date format
-
-
+        
         LocalDate today = LocalDate.now();
         DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -123,7 +122,7 @@ public class InsuranceApp {
                         // close file
                         fw.flush();
                         fw.close();
-                        System.out.println("File updated");
+                        System.out.println("File output.csv created!");
                     } catch (Exception E) {
                         System.out.println(E.getMessage());
                     }
@@ -169,15 +168,9 @@ public class InsuranceApp {
 
         for (Vehicle vehicleT : allVehicles) {
             if (!vehicleT.getInsuranceInfo().isInsured()) {
-
-                if (groupByPlate.containsKey(vehicleT.getPlate())) {
-                    ArrayList<InsuranceInfo> group = groupByPlate.get(vehicleT.getPlate());
-                    group.add(vehicleT.getInsuranceInfo());
-                } else {
-                    ArrayList<InsuranceInfo> group = new ArrayList<>();
-                    group.add(vehicleT.getInsuranceInfo());
-                    groupByPlate.put(vehicleT.getPlate(), group);
-                }
+                ArrayList<InsuranceInfo> group = new ArrayList<>();
+                group.add(vehicleT.getInsuranceInfo());
+                groupByPlate.put(vehicleT.getPlate(), group);
             }
         }
 
