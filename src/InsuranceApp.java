@@ -123,7 +123,7 @@ public class InsuranceApp {
                         // close file
                         fw.flush();
                         fw.close();
-                        System.out.println("File updated");
+                        System.out.println("File output is created!");
                     } catch (Exception E) {
                         System.out.println(E.getMessage());
                     }
