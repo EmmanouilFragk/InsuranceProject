@@ -3,14 +3,14 @@ import java.util.Date;
 
 public class InsuranceInfo {
 
-    private int contrsctID;
+    private int contractID;
     private String name;
     private String expiryDate;
     private float contractCost;
     private boolean isInsured;
 
-    public InsuranceInfo(int contrsctID, String name, String expiryDate, float fineCost, boolean isInsured) {
-        this.contrsctID = contrsctID;
+    public InsuranceInfo(int contractID, String name, String expiryDate, float fineCost, boolean isInsured) {
+        this.contractID = contractID;
         this.name = name;
         this.expiryDate = expiryDate;
         contractCost = fineCost;
@@ -18,11 +18,11 @@ public class InsuranceInfo {
     }
 
     public int getContrsctID() {
-        return contrsctID;
+        return contractID;
     }
 
-    public void setContrsctID(int contrsctID) {
-        this.contrsctID = contrsctID;
+    public void setContractID(int contrsctID) {
+        this.contractID = contrsctID;
     }
 
     public String getName() {
@@ -60,7 +60,7 @@ public class InsuranceInfo {
     @Override
     public String toString() {
         return "InsuranceInfo{" +
-                "contrsctID='" + contrsctID + '\'' +
+                "contrsctID='" + contractID + '\'' +
                 ", name='" + name + '\'' +
                 ", expireDate='" + expiryDate + '\'' +
                 ", contractCost='" + contractCost + '\'' +
