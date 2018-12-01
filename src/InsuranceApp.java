@@ -11,6 +11,7 @@ public class InsuranceApp {
         // Date format
 
 
+        
         LocalDate today = LocalDate.now();
         DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -18,7 +19,7 @@ public class InsuranceApp {
         // First create InsuranceInfo
 
         ArrayList<InsuranceInfo> allInsurances = new ArrayList<InsuranceInfo>();
-        BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\manfr\\IdeaProjects\\InsuranceProject\\InsuranceInfo.csv")));
+        BufferedReader br = new BufferedReader(new FileReader(new File("/home/mary/Desktop/InsuranceProject/InsuranceInfo.csv")));
         String line;
         try {
             while ((line = br.readLine()) != null) {
@@ -39,7 +40,7 @@ public class InsuranceApp {
         // Then create all vehicles with their InsuranceInfo and additional information
         ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
         // Read vehicle info
-        br = new BufferedReader(new FileReader(new File("C:\\Users\\manfr\\IdeaProjects\\InsuranceProject\\VehicleInfo.csv")));
+        br = new BufferedReader(new FileReader(new File("/home/mary/Desktop/InsuranceProject/VehicleInfo.csv")));
 
         try {
             //Iteration to put properly InsuranceInfo
