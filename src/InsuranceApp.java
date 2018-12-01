@@ -5,11 +5,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.LocalDate;
 
+//TRA LA LA
+
 public class InsuranceApp {
     public static void main(String[] args) throws FileNotFoundException {
 
         // Date format
-
 
         LocalDate today = LocalDate.now();
         DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
