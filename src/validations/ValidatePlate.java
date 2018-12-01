@@ -1,4 +1,4 @@
-package Validations;
+package validations;
 
 import java.util.regex.*;
 
