@@ -9,7 +9,7 @@ public class InsuranceApp {
     public static void main(String[] args) throws FileNotFoundException {
 
         // Date format
-        
+
         LocalDate today = LocalDate.now();
         DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -133,21 +133,21 @@ public class InsuranceApp {
 
             } else if (input == 4){
                 // insert fine cost for uninsured vehicle
+                System.out.println("Fine for each vehicle is: ");
                 Scanner scan = new Scanner(System.in);
                 double fine = scan.nextDouble();
-                System.out.println("Fine for each vehicle is: "+ fine);
-                Map<String, Integer> fineMap = new HashMap<>();
+                Map<String, Double> fineMap = new HashMap<>();
                 for (Vehicle vehicle : allVehicles) {
                     if(!vehicle.getInsuranceInfo().isInsured()) {
                         if (fineMap.containsKey(vehicle.getInsuranceInfo().getName())) {
-                            int count = fineMap.get(vehicle.getInsuranceInfo().getName());
-                            fineMap.put(vehicle.getInsuranceInfo().getName(), (count + 1));
+                            double count = fineMap.get(vehicle.getInsuranceInfo().getName());
+                            fineMap.put(vehicle.getInsuranceInfo().getName(), (count + fine));
                         } else {
-                            fineMap.put(vehicle.getInsuranceInfo().getName(), 1);
+                            fineMap.put(vehicle.getInsuranceInfo().getName(), fine);
                         }
                     }
                 }
-                System.out.println("The following customers have uninsured vehicles: ");
+                System.out.println("The following customers have uninsured vehicles with totally costs: ");
                 System.out.println(fineMap);
             } else if (input == 5) {
                 // Exit from menu
